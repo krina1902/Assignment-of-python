@@ -3,9 +3,8 @@
 string = input("Enter String:")
 mids = input("Enter mid string:")
 
-w=string.split()
-m = len(w)
-print(m)
+l = len(string)
+m = int(l/2)
 
-s = "".join(w[m:]+mids+w[:m])
-print(s)
+print(m)
+print(string[:m] + mids + string[m:]) 
