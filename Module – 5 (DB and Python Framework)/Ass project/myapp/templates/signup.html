@@ -1,0 +1,79 @@
+{% extends 'header.html' %}
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<style >
+		.container{
+			width: 1000px;
+			margin: 0 auto;
+			background-color: greenyellow;
+		}
+		.form{
+			text-align: center;
+			padding: 20px;
+		}
+		.form input{
+			padding: 10px;
+			margin: 15px;
+			width: 70%;
+		}
+
+	</style>
+    </head>
+	<body>
+						<div class="container form">
+							<h1>Sign Up</h1>
+
+						{% if msg%}
+							<b style="color:red">{{msg}}</b>
+						{% endif %}
+						<form name="form" method="post" action="{% url 'signup'%}" enctype="multipart/form-data" class="form">
+								{% csrf_token %}
+							<div class="form-group">
+								<select class="input" name="usertype">
+									<option>------Select Option------</option>
+									<option name='buyer'>Productmanager</option>
+									<option name='seller'>Admin</option>
+								</select>
+							</div>
+							<div class="form-group">
+								<input class="input" type="text" name="fname" placeholder="First Name">
+							</div>
+							<div class="form-group">
+								<input class="input" type="text" name="lname" placeholder="Last Name">
+							</div>
+							<div class="form-group">
+								<input class="input" type="email" name="email" placeholder="Email" id="email">
+								<span id="email_error"> </span>
+							</div>
+							<div class="form-group">
+								<input class="input" type="text" name="mobile" placeholder="Mobile">
+							</div>
+							<div class="form-group">
+								<input class="input" type="text" name="address" placeholder="Address">
+							</div>
+							<div class="form-group">
+								<input class="input" type="password" name="password" placeholder="Password">
+							</div>
+							<div class="form-group">
+								<input class="input" type="password" name="cpassword" placeholder="Confirm Password">
+							</div>
+							<div class="form-group">
+								<input class="input" name="admin_access">
+							</div>
+							<div class="form-group">
+								<input class="btn btn-danger" type="submit" name="action" value="Sign Up">
+							</div>
+						</form>	
+					</div>
+				</div>
+			</div>
+			<!-- /container -->
+		</div>
+		<!-- /SECTION -->
+		
+		
+	</body>
+</html>
+{% endblock %}

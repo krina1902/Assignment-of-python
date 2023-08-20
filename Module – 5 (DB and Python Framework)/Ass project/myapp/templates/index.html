@@ -1,3 +1,5 @@
+{% extends 'header.html'%}
+{% block content %}
 <!DOCTYPE html>
 <html>
 <head>
@@ -25,25 +27,11 @@
 <body>
 				 <div class="container"> 
 				 	<div class="form">
-					<h1>Admin Panel</h1>
-						{% if msg%}
-							<b style="color:red">{{msg}}</b>
-						{% endif %}
-						<form name="form" method="post" action="{% url 'index'%}" enctype="multipart/form-data" >
-								{% csrf_token %}
-							<div class="form-group">
-								<input class="input" type="text" name="product_id" placeholder="Product Id">
-							</div>
-							<div class="form-group">
-								<input class="input" type="text" name="product_name" placeholder="Product Name" id="product_name">	
-							</div>
-							<div>
-								<input type="submit" name="action" value="Add Product" style="background-color: red;">
-							</div>
-							
-						</form>	
+					<h1>Index</h1>
 						<div>
 							
 					</div>	</div>
+
 </body>
 </html>
+{% endblock %}
