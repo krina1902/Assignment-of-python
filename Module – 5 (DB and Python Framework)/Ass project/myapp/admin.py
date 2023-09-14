@@ -1,6 +1,7 @@
+
 from django.contrib import admin
-from .models import Productmanager
+from .models import User
 
 # Register your models here.
 
-admin.site.register(Productmanager)
+admin.site.register(User)

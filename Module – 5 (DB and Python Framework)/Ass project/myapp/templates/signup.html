@@ -1,30 +1,44 @@
-{% extends 'header.html' %}
+{% extends 'header.html'%}
 {% block content %}
 <!DOCTYPE html>
-<html lang="en">
-	<head>
-		<style >
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+	<style>
 		.container{
-			width: 1000px;
+			width: 1200px;
 			margin: 0 auto;
-			background-color: greenyellow;
-		}
-		.form{
-			text-align: center;
-			padding: 20px;
+			background-color: gray;
 		}
 		.form input{
 			padding: 10px;
-			margin: 15px;
+			margin: 10px auto;
 			width: 70%;
+			text-align: center;
+
 		}
-
+		.form{
+			margin: 0 auto;
+			align-items: center;
+		}
 	</style>
-    </head>
-	<body>
-						<div class="container form">
-							<h1>Sign Up</h1>
+</head>
+<body>
 
+		
+
+
+		<!-- SECTION -->
+		<div class="section">
+			<!-- container -->
+			<div class="container">
+				<!-- row -->
+				<div class="row">
+
+					<div class="form">
+						<h1>Sign Up</h1>
 						{% if msg%}
 							<b style="color:red">{{msg}}</b>
 						{% endif %}
@@ -33,8 +47,8 @@
 							<div class="form-group">
 								<select class="input" name="usertype">
 									<option>------Select Option------</option>
-									<option name='buyer'>Productmanager</option>
-									<option name='seller'>Admin</option>
+									<option name='buyer'>Buyer</option>
+									<option name='seller'>Seller</option>
 								</select>
 							</div>
 							<div class="form-group">
@@ -60,7 +74,7 @@
 								<input class="input" type="password" name="cpassword" placeholder="Confirm Password">
 							</div>
 							<div class="form-group">
-								<input class="input" name="admin_access">
+								<input class="input" type="file" name="profile_pic">
 							</div>
 							<div class="form-group">
 								<input class="btn btn-danger" type="submit" name="action" value="Sign Up">
@@ -71,9 +85,6 @@
 			</div>
 			<!-- /container -->
 		</div>
-		<!-- /SECTION -->
-		
-		
-	</body>
+</body>
 </html>
 {% endblock %}
